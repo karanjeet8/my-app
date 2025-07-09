@@ -1,0 +1,186 @@
+/* File: src/pages/styles.css */
+
+.withdraw-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ffffff6a;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0c2a45;
+}
+
+.balance-card {
+  background: linear-gradient(135deg, #f6a418, #f6a418b3);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  color: #ffffff66;
+  text-align: center;
+  position: relative;
+}
+
+.balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.copy-icon {
+  color: #333;
+  cursor: pointer;
+}
+
+.balance-amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffffc1;
+  margin-bottom: 12px;
+}
+
+.withdraw-all-btn {
+  background: #fff;
+  color: #f6a418;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.withdraw-form {
+  background: #ffffff4a;
+}
+
+.section-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 14px;
+  color: #333;
+}
+
+.input-box {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #f6a5189b;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.withdraw-info {
+  background: #fffefc18;
+  border: 1px solid #f6a418;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 18px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+  background-color: #ceb7b7b3;
+}
+
+.highlight-address {
+  color: #f6a418;
+  font-weight: bold;
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(to right, #f6a418, #f6a418cc);
+  color: #ffffff7f;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .withdraw-container {
+    padding: 12px;
+  }
+
+  .balance-amount {
+    font-size: 28px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+  }
+}
+.back-button-container {
+  margin-bottom: 10px;
+}
+
+.back-button {
+  background: linear-gradient(to right, #f7d794, #f6e58d);
+  border: none;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.back-button:hover {
+  background: linear-gradient(to right, #f3d250, #f9ca24);
+}
+
+.copy-icon {
+  margin-left: 8px;
+  cursor: pointer;
+  color: #dbcacae3;
+  transition: transform 0.2s ease;
+}
+
+.copy-icon:hover {
+  transform: scale(1.2);
+  color: #000;
+}
+/* Change Withdrawal Method Button */
+.change-method {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.change-method-btn {
+  background: linear-gradient(135deg, #d6a37e, #bc8643);
+  border: none;
+  color: #fff;
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(228, 175, 83, 0.3);
+}
+
+.change-method-btn:hover {
+  background: linear-gradient(135deg, #dd9844, #cab262);
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(202, 138, 48, 0.4);
+}

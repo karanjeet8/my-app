@@ -1,0 +1,101 @@
+.deposit-history-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.deposit-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.back-btn-floating {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background-color: #333;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.balance-summary {
+  background-color: #f5f5f5;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.deposit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deposit-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 5px solid #4caf50;
+}
+
+.status {
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+.status.pending {
+  color: orange;
+}
+
+.status.success {
+  color: green;
+}
+
+.status.failed {
+  color: red;
+}
+
+.no-record {
+  text-align: center;
+  font-size: 1rem;
+  color: #888;
+  margin-top: 2rem;
+}
+
+@media (max-width: 480px) {
+  .deposit-title {
+    font-size: 1.3rem;
+  }
+
+  .balance-summary {
+    font-size: 0.95rem;
+  }
+
+  .deposit-card {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .back-btn-floating {
+    top: 12px;
+    left: 12px;
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}

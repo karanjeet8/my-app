@@ -1,0 +1,81 @@
+.settings-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.settings-header h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  color: #333;
+}
+
+.back-button {
+  background-color: #eee;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  background-color: #ddd;
+}
+
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.settings-item:hover {
+  background-color: #f0f0f0;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 10px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.purple { background: #c084fc; color: white; }
+.teal { background: #0ea5e9; color: white; }
+.orange { background: #f97316; color: white; }
+.green { background: #22c55e; color: white; }
+
+.settings-item span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}

@@ -1,0 +1,86 @@
+/* Terms and Conditions Page Full Background + Glass Style */
+.terms-wrapper {
+  min-height: 100vh;
+    background: linear-gradient(to bottom, #ffffff, #fff3db);
+
+  background-size: 400% 400%;
+  animation: bgShift 18s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffffc8;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.terms-card {
+  width: 100%;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  color: #b4b894;
+  line-height: 1.7;
+}
+
+.terms-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #c6b710;
+  text-shadow: 0 0 12px rgba(127, 128, 65, 0.4);
+}
+
+.terms-section {
+  margin-bottom: 1.8rem;
+}
+
+.terms-section h2 {
+  font-size: 1.3rem;
+  color: #90a226;
+  margin-bottom: 0.6rem;
+}
+
+.terms-section p {
+  font-size: 1rem;
+  color: #a5a885bc;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .terms-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .terms-title {
+    font-size: 1.6rem;
+  }
+
+  .terms-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .terms-section p {
+    font-size: 0.95rem;
+  }
+}
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #eee;
+  border: none;
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -1,0 +1,150 @@
+/* File: Styles.css */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.register-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  transition: background 0.4s;
+  padding-left: 40px; /* 💡 Shift right */
+}
+
+.register-container.dark {
+  background: #121212;
+  color: #fff;
+}
+
+.register-container.light {
+  background: linear-gradient(to right, #ffe0b2, #ffcc80);
+  color: #000;
+}
+
+.toggle-mode-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: #ffa726;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.register-left {
+  flex: 1;
+  padding: 40px 20px;
+  min-width: 300px;
+  transform: translateX(20px); /* 💡 Slightly right */
+}
+
+.brand-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+.stats-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  color: #333;
+  margin-top: 20px;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: white;
+}
+
+.purple {
+  background-color: #9c27b0;
+}
+.green {
+  background-color: #4caf50;
+}
+.pink {
+  background-color: #e91e63;
+}
+
+.info-text {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.register-right {
+  flex: 1;
+  padding: 40px 20px;
+  min-width: 350px;
+}
+
+.form-box {
+  background: #ffffffcc;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+}
+
+.form-box input,
+.form-box select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.gender-selection {
+  margin-top: 12px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background: linear-gradient(90deg, #ffa726, #ff7043);
+}
+
+.checkbox {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  .register-left, .register-right {
+    padding: 20px;
+  }
+
+  .form-box {
+    padding: 20px;
+  }
+}

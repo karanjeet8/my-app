@@ -1,0 +1,244 @@
+/* ===== Root Theme Variables ===== */
+:root {
+  --light-bg: #f5f7fa;
+  --dark-bg: #1c1c2b;
+  --light-text: #222;
+  --dark-text: #eee;
+  --accent: #ff6f00;
+  --error: #ff4d4d;
+}
+
+[data-theme="dark"] {
+  --light-bg: #1c1c2b;
+  --light-text: #eee;
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--light-bg);
+  color: var(--light-text);
+  transition: all 0.3s ease;
+}
+
+/* ===== Page Layout ===== */
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ===== Theme Toggle ===== */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-toggle button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Left Panel ===== */
+.login-left {
+  flex: 1;
+  min-width: 280px;
+  max-width: 450px;
+  background: linear-gradient(135deg, #ff9f43, #ff6f00);
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  padding: 40px 30px;
+  margin: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.wallet-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.login-left h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.login-left p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ===== Right Panel ===== */
+.login-right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+[data-theme="dark"] .login-right {
+  background: #2d2d3f;
+}
+
+/* ===== Logo/Header ===== */
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ===== Form Box ===== */
+.login-form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: var(--light-text);
+}
+
+/* ===== Login Form ===== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.login-form input:focus {
+  border-color: var(--accent);
+  background: white;
+  outline: none;
+}
+
+/* ===== Form Actions ===== */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.form-actions a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+/* ===== Submit Button ===== */
+.primary-btn {
+  margin-top: 20px;
+  background: var(--accent);
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(255, 111, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Error Message ===== */
+.error-message {
+  background: var(--error);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .login-left,
+  .login-right {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .theme-toggle {
+    position: static;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .login-form-box h2 {
+    font-size: 1.5rem;
+  }
+}
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 1rem;
+  transition: border 0.3s;
+  color: var(--light-text); /* ← ✅ This line ensures text is visible */
+}
+
+[data-theme="dark"] .login-form input {
+  background: #444;
+  border: 1px solid #666;
+  color: var(--dark-text); /* ← ✅ Ensures white text in dark mode */
+}
+.password-field {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  cursor: pointer;
+  color: #555;
+  font-size: 18px;
+}

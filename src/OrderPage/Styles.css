@@ -1,0 +1,227 @@
+/* ===== Base & Background ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff4e6, #ffe0b2);
+  color: #1f2937;
+}
+
+/* ===== Container ===== */
+.orders-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+/* ===== Back Button ===== */
+.back-btn-floating {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back-btn-floating:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Tabs ===== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 70px;
+}
+
+.tab-button {
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  border: 2px solid #fb923c;
+  background-color: #fff;
+  color: #fb923c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active,
+.tab-button:hover {
+  background-color: #fb923c;
+  color: white;
+}
+
+/* ===== VIP Card Layout ===== */
+.vip-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.vip-card {
+  position: relative;
+  padding: 1.5rem;
+  background: linear-gradient(to top left, #fffaf0, #fff3e0);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.vip-card:hover {
+  transform: translateY(-8px);
+  border-color: #f97316;
+}
+
+.vip-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #f97316, #f59e0b, #fcd34d);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.4;
+  border-radius: 22px;
+  transition: opacity 0.3s ease;
+}
+
+.vip-card:hover::before {
+  opacity: 0.9;
+}
+
+.selected-card {
+  border: 2px solid #f97316;
+}
+
+/* ===== VIP Info Text ===== */
+.vip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #1e293b;
+}
+
+.vip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vip-label {
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.edit-icon {
+  color: #f59e0b;
+  cursor: pointer;
+}
+
+/* Editable Inputs */
+.vip-card input {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #fff7ed;
+}
+
+/* ===== VIP Image - 3D Tilt & Glow ===== */
+.vip-image {
+  margin-top: 1rem;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.vip-image img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(255, 138, 0, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform: rotateY(0deg);
+}
+
+.vip-card:hover .vip-image img {
+  transform: rotateY(10deg) scale(1.08);
+  box-shadow: 0 15px 30px rgba(255, 107, 0, 0.6);
+}
+
+/* ===== Main Buttons ===== */
+.next-button,
+.save-button {
+  margin: 2rem auto 0;
+  display: block;
+  padding: 0.8rem 2.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #f97316, #f59e0b);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(250, 146, 60, 0.3);
+  transition: all 0.3s ease;
+}
+
+.next-button:hover,
+.save-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #f59e0b, #f97316);
+}
+
+/* ===== Responsive Tweaks ===== */
+@media screen and (max-width: 600px) {
+  .vip-card {
+    padding: 1.2rem;
+  }
+
+  .vip-image {
+    height: 120px;
+  }
+
+  .tab-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .next-button,
+  .save-button {
+    width: 90%;
+  }
+
+  .vip-info {
+    text-align: center;
+  }
+
+  .vip-header {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}

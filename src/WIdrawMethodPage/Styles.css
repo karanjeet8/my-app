@@ -1,0 +1,99 @@
+.withdraw-method-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', sans-serif;
+  color: #111; /* Ensures dark readable text */
+}
+
+.withdraw-method-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  color: #111; /* Text color darkened */
+  font-size: 15px;
+}
+
+.input-field::placeholder {
+  color: #888; /* Better placeholder visibility */
+}
+
+.save-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+.current-info {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+  color: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+  .withdraw-method-container {
+    background: #1f1f1f;
+    color: #f0f0f0;
+  }
+
+  .input-field {
+    background: #2c2c2c;
+    color: #fff;
+    border: 1px solid #555;
+  }
+
+  .input-field::placeholder {
+    color: #aaa;
+  }
+
+  .current-info {
+    background: #2b2b2b;
+    color: #f0f0f0;
+  }
+}
+.back-button {
+  margin-bottom: 15px;
+  background-color: #eee;
+  color: #333;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  background-color: #ddd;
+}

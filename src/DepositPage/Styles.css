@@ -1,0 +1,186 @@
+/* Base Full Page Layout */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffefeb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Wrapper to Center Content */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Deposit Container */
+.deposit-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem 1.5rem;
+    background: linear-gradient(to bottom right, #969191, #ffefeb);
+
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Heading */
+.deposit-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Balance Box */
+.balance-box {
+  font-size: 1rem;
+  color: #374151;
+  background-color: #e2e8f0;
+  padding: 0.9rem;
+  border-radius: 12px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Entered Amount Box */
+.entered-amount {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+  padding: 0.9rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+/* Input Field */
+.deposit-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #c9ced5d0;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.deposit-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Deposit Button */
+.deposit-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.05rem;
+  background-color: #facc15;
+  color: #b8c5da;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.deposit-btn:hover {
+  background-color: #eab308;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 480px) {
+  .deposit-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .deposit-heading {
+    font-size: 1.5rem;
+  }
+
+  .deposit-btn {
+    font-size: 0.95rem;
+    padding: 0.9rem;
+  }
+}
+.usdt-section {
+  background-color: #fef9c3;
+  border: 1px dashed #facc15;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.usdt-label {
+  font-weight: bold;
+  color: #92400e;
+  margin-bottom: 0.4rem;
+}
+
+.usdt-address {
+  font-size: 1rem;
+  word-break: break-all;
+  background-color: #fff7ed;
+  padding: 0.6rem;
+  border-radius: 10px;
+  color: #1e293b;
+  border: 1px solid #fde68a;
+  margin-bottom: 0.5rem;
+}
+
+.copy-btn {
+  background-color: #facc15;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #1f2937;
+}
+
+.copy-btn:hover {
+  background-color: #eab308;
+}
+
+.usdt-note {
+  font-size: 0.85rem;
+  color: #92400e;
+  margin-top: 0.5rem;
+}
+.back-button-container {
+  margin-bottom: 10px;
+}
+
+.back-button {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #cccccc4f;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.speaker-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.speaker-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}

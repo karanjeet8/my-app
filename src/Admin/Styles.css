@@ -1,0 +1,169 @@
+/* File: AdminStyles.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.login-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.login-input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.login-input::placeholder {
+  color: #ddd;
+}
+
+.login-btn {
+  background: #00c6ff;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+}
+
+.logout-btn {
+  float: right;
+  margin: 10px;
+  padding: 8px 16px;
+  background: #ff4e50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #d63447;
+}
+
+.admin-panel {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 30px;
+  color: white;
+}
+
+.admin-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.vip-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.vip-table th, .vip-table td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.commission-input {
+  padding: 8px;
+  width: 80px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+}
+
+.save-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #00b09b, #96c93d);
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.save-button:hover {
+  transform: translateY(-2px);
+}
+
+.not-authorized {
+  margin: 100px auto;
+  padding: 30px;
+  background: rgba(255, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 12px;
+  max-width: 400px;
+  color: #ffcccc;
+  border: 2px dashed red;
+}
+.commission-input {
+  padding: 10px;
+  width: 80px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+}
+
+.commission-input:focus {
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #00b09b;
+}

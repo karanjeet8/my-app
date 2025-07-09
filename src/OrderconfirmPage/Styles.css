@@ -1,0 +1,116 @@
+/* File: Styles.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #a38568, #fff3e6);
+
+
+}
+
+.confirm-container {
+  max-width: 450px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ccc9be;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+}
+
+.order-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.vip-section {
+  margin-bottom: 1.5rem;
+}
+
+.vip-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b6b3a1;
+  padding: 1rem;
+  border-radius: 15px;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.vip-icon {
+  font-size: 1.8rem;
+}
+
+.vip-level {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.vip-percent {
+  font-size: 0.9rem;
+  color: #cfccc6;
+}
+
+.summary-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.summary-item {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: transform 0.2s;
+}
+
+.summary-item:hover {
+  transform: translateY(-2px);
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.summary-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  display: block;
+  color: #333;
+}
+
+.start-ordering-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #b8a56d;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.start-ordering-btn:hover {
+  background-color: #998e28;
+}

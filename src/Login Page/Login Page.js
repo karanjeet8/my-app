@@ -70,7 +70,7 @@ const LoginPage = () => {
       <div className="login-right">
         <div className="login-header">
           <img
-            src="https://i.pinimg.com/736x/db/df/5f/dbdf5ffe2a87f40656dc58e61cf71d36.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOP9DL-fGkLcFB3_gkT3sN9gdCfw6S3LLL0g&s"
             alt="logo"
             className="logo"
           />

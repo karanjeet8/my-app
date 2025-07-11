@@ -99,3 +99,25 @@
     font-size: 15px;
   }
 }
+/* ========== Image Animation ========== */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.service-image {
+  width: 90%;
+  max-width: 360px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: float 4s ease-in-out infinite;
+}

@@ -66,10 +66,7 @@ const Homepage = () => {
     const newState = !speakerOn;
     setSpeakerOn(newState);
     localStorage.setItem("speakerOn", newState);
-
-    if (!newState) {
-      speechSynthesis.cancel(); // 🔇 Stop any ongoing speech
-    }
+    if (!newState) speechSynthesis.cancel();
   };
 
   useEffect(() => {
@@ -78,22 +75,22 @@ const Homepage = () => {
     }, 4000);
     return () => {
       clearInterval(interval);
-      speechSynthesis.cancel(); // Clean up on unmount
+      speechSynthesis.cancel();
     };
   }, []);
 
   useEffect(() => {
+    document.body.dir = language === "Arabic" ? "rtl" : "ltr";
+    setTransactionMessages([]);
     const voiceCode = langCodes[language] || "en-US";
-    let latestWithdraw = JSON.parse(localStorage.getItem("latestWithdraw"));
-
-    let dummyData = [
+    const latestWithdraw = JSON.parse(localStorage.getItem("latestWithdraw"));
+    const dummyData = [
       { name: language === "Arabic" ? "علي" : "Ali", id: "Z1A8923", amount: "125.00" },
       { name: language === "Arabic" ? "فاطمة" : "Fatima", id: "Z1B7632", amount: "200.50" },
       { name: language === "Arabic" ? "أحمد" : "Ahmed", id: "Z1C4401", amount: "89.99" },
       { name: language === "Arabic" ? "مريم" : "Maryam", id: "Z1D1190", amount: "300.00" },
       { name: language === "Arabic" ? "سلمان" : "Salman", id: "Z1E5678", amount: "150.75" }
     ];
-
     const itemsToAnnounce = latestWithdraw ? [latestWithdraw] : dummyData;
 
     itemsToAnnounce.forEach((entry, i) => {
@@ -138,9 +135,13 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-      <header className="header">
-        <div className="app-name">🚀 Z1 Wallet</div>
-        <div className="header-right">
+      {/* Updated Navbar */}
+      <header className="navbar">
+        <div className="navbar-left">
+          <span className="logo-text">💸 <span className="logo-gradient">W1 Wallet</span></span>
+        </div>
+
+        <div className="navbar-right">
           <div className="language-selector">
             <div className="language-toggle" onClick={() => setShowDropdown(!showDropdown)}>
               🌐 {language}
@@ -166,12 +167,14 @@ const Homepage = () => {
         </div>
       </header>
 
+      {/* Image Slider */}
       <div className="slider-container">
         {sliderImages.map((img, i) => (
-          <img key={i} src={img} alt={`slide-${i}`} className={`slider-image ${i === currentSlide ? "active" : ""}`} />
+          <img key={i} src={img} alt={`Slider image ${i + 1}`} className={`slider-image ${i === currentSlide ? "active" : ""}`} />
         ))}
       </div>
 
+      {/* Feature Cards */}
       <div className="feature-grid">
         {selectedLang.features.map((label, index) => (
           <div key={index} className="feature-card" onClick={() => handleFeatureClick(index)}>
@@ -181,6 +184,7 @@ const Homepage = () => {
         ))}
       </div>
 
+      {/* Transaction Announcements */}
       <div className="transaction-section">
         <h3>{selectedLang.transactionsTitle}</h3>
         <div className="transaction-list">
@@ -190,6 +194,7 @@ const Homepage = () => {
         </div>
       </div>
 
+      {/* Bottom Navigation */}
       <footer className="bottom-nav">
         {selectedLang.bottomNav.map((label, i) => (
           <div key={i} className="nav-item" onClick={() => handleBottomNavClick(i)}>

@@ -50,7 +50,6 @@ const WithdrawPage = () => {
             const userInfo = snapshot.val();
             setName(userInfo.name || firebaseUser.displayName || "User");
 
-            // ✅ Fetch withdrawal method from localStorage
             const method = JSON.parse(localStorage.getItem("withdrawMethod"));
             if (method?.address) {
               setAddress(`${method.type} - ${method.address}`);
@@ -85,6 +84,7 @@ const WithdrawPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const amount = parseFloat(withdrawAmount);
+
     if (!withdrawAmount || isNaN(amount) || amount <= 0) {
       alert("❌ Please enter a valid amount to withdraw.");
       return;
@@ -100,6 +100,14 @@ const WithdrawPage = () => {
       return;
     }
 
+    // ✅ Check password set from ChangeWithdrawPassword
+    const savedPassword = localStorage.getItem("withdraw-password");
+    if (withdrawPassword !== savedPassword) {
+      alert("❌ Incorrect withdrawal password.");
+      return;
+    }
+
+    // ✅ Proceed with withdrawal
     const newBalance = (balance - amount).toFixed(2);
     setBalance(parseFloat(newBalance));
     localStorage.setItem("balance", JSON.stringify(parseFloat(newBalance)));

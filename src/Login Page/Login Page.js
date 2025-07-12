@@ -31,6 +31,7 @@ const LoginPage = () => {
       return;
     }
 
+    // Admin shortcut
     const adminEmail = "admin@example.com";
     const adminPassword = "555444333";
 
@@ -41,10 +42,17 @@ const LoginPage = () => {
     }
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
       alert("✅ Logged in successfully!");
+
+      // Optional: store user info without sensitive data
+      localStorage.setItem("current-user", JSON.stringify({ uid: user.uid, email: user.email }));
+
       navigate("/home");
     } catch (err) {
+      console.error("Login Error:", err);
       setError("❌ Invalid credentials or account not found.");
     }
   };
@@ -111,7 +119,6 @@ const LoginPage = () => {
               SIGN IN →
             </button>
 
-            {/* ✅ Register Redirect */}
             <div className="register-link">
               <p>
                 New user?{" "}

@@ -1,65 +1,60 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Styles.css";
 
-const ChangeWithdrawPassword = () => {
+const WithdrawPage = () => {
   const navigate = useNavigate();
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [withdrawAmount, setWithdrawAmount] = useState("");
+  const [withdrawPassword, setWithdrawPassword] = useState("");
 
-  // Prefill from localStorage
-  useEffect(() => {
+  const handleWithdraw = () => {
     const savedPassword = localStorage.getItem("withdraw-password");
-    if (savedPassword) {
-      setNewPassword(savedPassword);
-      setConfirmPassword(savedPassword);
-    }
-  }, []);
 
-  const handleSave = () => {
-    if (!newPassword || !confirmPassword) {
-      alert("Please fill in both fields.");
+    if (!withdrawPassword) {
+      alert("Please enter withdrawal password.");
       return;
     }
 
-    if (newPassword !== confirmPassword) {
-      alert("Passwords do not match.");
+    if (withdrawPassword !== savedPassword) {
+      alert("Incorrect withdrawal password.");
       return;
     }
 
-    localStorage.setItem("withdraw-password", newPassword);
-    alert("Withdrawal password saved successfully!");
-    navigate(-1); // Go back
+    if (!withdrawAmount || isNaN(withdrawAmount) || parseFloat(withdrawAmount) <= 0) {
+      alert("Please enter a valid withdrawal amount.");
+      return;
+    }
+
+    // ✅ Proceed with withdrawal logic
+    alert(`Withdrawing ₹${withdrawAmount} successfully!`);
+    // Optionally navigate or reset fields
   };
 
   return (
-    <div className="withdraw-pass-container">
-      <div className="header-with-back">
-        <button className="back-button" onClick={() => navigate(-1)}>← Back</button>
-        <h2>🔐 Update Withdrawal Password</h2>
-      </div>
+    <div className="withdraw-container">
+      <h2>Withdraw Money</h2>
 
       <input
-        type="password"
+        type="number"
         className="input-field"
-        placeholder="New Withdrawal Password"
-        value={newPassword}
-        onChange={(e) => setNewPassword(e.target.value)}
+        placeholder="Enter Amount"
+        value={withdrawAmount}
+        onChange={(e) => setWithdrawAmount(e.target.value)}
       />
 
       <input
         type="password"
         className="input-field"
-        placeholder="Confirm Password"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
+        placeholder="Enter Withdrawal Password"
+        value={withdrawPassword}
+        onChange={(e) => setWithdrawPassword(e.target.value)}
       />
 
-      <button className="save-button" onClick={handleSave}>
-        💾 Save Password
+      <button className="withdraw-button" onClick={handleWithdraw}>
+        💸 Withdraw
       </button>
     </div>
   );
 };
 
-export default ChangeWithdrawPassword;
+export default WithdrawPage;

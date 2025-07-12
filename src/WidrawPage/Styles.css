@@ -1,19 +1,69 @@
 /* File: src/pages/styles.css */
 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 .withdraw-container {
   max-width: 500px;
   margin: auto;
   padding: 16px;
   font-family: 'Segoe UI', sans-serif;
   background: #ffffff6a;
+  box-sizing: border-box;
+}
+
+/* ✅ Withdraw Header: title left, back button right */
+.withdraw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .page-title {
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 20px;
   color: #0c2a45;
+  margin: 0;
 }
+
+.back-button {
+  background: linear-gradient(to right, #f7d794, #f6e58d);
+  border: none;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.back-button:hover {
+  background: linear-gradient(to right, #f3d250, #f9ca24);
+}
+
+@media screen and (max-width: 400px) {
+  .withdraw-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .back-button {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+/* 🔽 Other styles (no changes, included for completeness) */
 
 .balance-card {
   background: linear-gradient(135deg, #f6a418, #f6a418b3);
@@ -36,8 +86,15 @@
 }
 
 .copy-icon {
-  color: #333;
+  color: #dbcacae3;
   cursor: pointer;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.copy-icon:hover {
+  transform: scale(1.2);
+  color: #000;
 }
 
 .balance-amount {
@@ -60,6 +117,9 @@
 
 .withdraw-form {
   background: #ffffff4a;
+  padding: 10px;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .section-label {
@@ -78,6 +138,7 @@
   border-radius: 12px;
   font-size: 14px;
   outline: none;
+  box-sizing: border-box;
 }
 
 .withdraw-info {
@@ -91,6 +152,7 @@
 .info-row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 6px 0;
   font-size: 14px;
   background-color: #ceb7b7b3;
@@ -114,52 +176,6 @@
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 600px) {
-  .withdraw-container {
-    padding: 12px;
-  }
-
-  .balance-amount {
-    font-size: 28px;
-  }
-
-  .submit-btn {
-    font-size: 14px;
-  }
-}
-.back-button-container {
-  margin-bottom: 10px;
-}
-
-.back-button {
-  background: linear-gradient(to right, #f7d794, #f6e58d);
-  border: none;
-  color: #333;
-  padding: 8px 16px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.back-button:hover {
-  background: linear-gradient(to right, #f3d250, #f9ca24);
-}
-
-.copy-icon {
-  margin-left: 8px;
-  cursor: pointer;
-  color: #dbcacae3;
-  transition: transform 0.2s ease;
-}
-
-.copy-icon:hover {
-  transform: scale(1.2);
-  color: #000;
-}
-/* Change Withdrawal Method Button */
 .change-method {
   text-align: center;
   margin-top: 15px;
@@ -183,4 +199,41 @@
   background: linear-gradient(135deg, #dd9844, #cab262);
   transform: scale(1.03);
   box-shadow: 0 6px 14px rgba(202, 138, 48, 0.4);
+}
+
+/* 📱 Responsive tweaks */
+@media screen and (max-width: 600px) {
+  .withdraw-container {
+    padding: 12px;
+  }
+
+  .balance-amount {
+    font-size: 28px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .input-box {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .withdraw-all-btn {
+    padding: 6px 18px;
+    font-size: 13px;
+  }
+
+  .change-method-btn {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .info-row {
+    font-size: 13px;
+    flex-direction: column;
+    gap: 6px;
+  }
 }

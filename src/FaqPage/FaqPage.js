@@ -27,6 +27,31 @@ const faqData = [
     question: "Do you provide customer support?",
     answer:
       "Yes, our customer service team is available 7 days a week from 7:00 AM to 11:00 PM."
+  },
+  {
+    question: "How can I contact support?",
+    answer:
+      "You can reach us via live chat, email, or WhatsApp. We aim to respond within 5 minutes."
+  },
+  {
+    question: "Are there trading fees?",
+    answer:
+      "Z1 charges minimal transaction fees and no hidden costs. All fees are transparently shown before any trade."
+  },
+  {
+    question: "Can beginners use this platform?",
+    answer:
+      "Absolutely! Z1 is built with beginners in mind. We also provide tutorials and demo accounts."
+  },
+  {
+    question: "Is my money insured?",
+    answer:
+      "Yes, all user funds are protected under our insurance partnership covering up to $100,000."
+  },
+  {
+    question: "Can I upgrade my account to VIP?",
+    answer:
+      "Yes, VIP upgrades are available based on trading volume or subscription. VIP users get higher limits and benefits."
   }
 ];
 
@@ -41,9 +66,7 @@ const FaqPage = () => {
   return (
     <div className="faq-page">
       <div className="faq-container">
-        {/* ✅ Back Button */}
         <button className="back-button" onClick={() => navigate(-1)}>←</button>
-
         <h2 className="faq-title">📘 Frequently Asked Questions</h2>
 
         {faqData.map((item, index) => (
@@ -52,7 +75,10 @@ const FaqPage = () => {
             className={`faq-item ${activeIndex === index ? "active" : ""}`}
             onClick={() => toggleIndex(index)}
           >
-            <div className="faq-question">{item.question}</div>
+            <div className="faq-question">
+              {item.question}
+              <span className="arrow">{activeIndex === index ? "▲" : "▼"}</span>
+            </div>
             <div className="faq-answer">
               <p>{item.answer}</p>
             </div>

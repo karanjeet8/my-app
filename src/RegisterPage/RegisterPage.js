@@ -163,6 +163,8 @@ const RegisterPage = () => {
             required
           >
             <option value="">Select Country</option>
+            <option value="India">India</option>
+
             <option value="USA">USA</option>
             <option value="UK">UK</option>
             <option value="Canada">Canada</option>
@@ -229,14 +231,28 @@ const RegisterPage = () => {
           <div className="checkbox">
             <input type="checkbox" id="agree" required />
             <label htmlFor="agree">
-              I agree to the <a href="#">Terms & Conditions</a> and{" "}
-              <a href="#">Privacy Policy</a>
+              I agree to the{" "}
+              <span className="link-text" onClick={() => navigate("/terms")}>
+                Terms & Conditions
+              </span>{" "}
+              and{" "}
+              <span className="link-text" onClick={() => navigate("/privacy")}>
+                Privacy Policy
+              </span>
             </label>
           </div>
 
           <button type="submit" className="register-btn">
             Register
           </button>
+
+          {/* ✅ Login Option Added */}
+          <p className="login-option">
+            Already have an account?{" "}
+            <span className="login-link" onClick={() => navigate("/login")}>
+              Login
+            </span>
+          </p>
         </form>
       </div>
     </div>

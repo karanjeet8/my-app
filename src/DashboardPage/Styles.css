@@ -337,4 +337,117 @@
     height: 22px;
   }
 }
+/* Bottom Navigation - Fixed to Bottom */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #ffffff; /* Light mode default */
+  border-top: 1px solid #ddd;
+  transition: background 0.3s ease;
+}
 
+/* Bottom nav dark mode */
+body.dark-mode .bottom-nav {
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+/* Optional: add spacing so content above doesn’t hide under navbar */
+.homepage {
+  padding-bottom: 70px; /* Ensure content doesn't go under navbar */
+}
+
+/* Bottom nav item styling */
+.bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.bottom-nav .nav-item .icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+/* Base Mode Setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background: linear-gradient(to bottom right, #f5f5f5, #ffffff);
+  color: #111;
+}
+
+body.light-mode .navbar {
+  background: #ffffff;
+  color: #111;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .feature-card {
+  background: #ffffff;
+  color: #000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .transaction-alert {
+  background: #fef6e4;
+  border-left: 4px solid #fbbf24;
+  color: #333;
+}
+
+body.light-mode .bottom-nav {
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: linear-gradient(to bottom right, #121212, #1e1e1e);
+  color: #f5f5f5;
+}
+
+body.dark-mode .navbar {
+  background: #1a1a1a;
+  color: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .feature-card {
+  background: #2c2c2c;
+  color: #f0f0f0;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .transaction-alert {
+  background: #2f2215;
+  border-left: 4px solid #fbbf24;
+  color: #fce5b4;
+}
+
+body.dark-mode .bottom-nav {
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+/* Common Styles */
+.navbar,
+.bottom-nav,
+.feature-card,
+.transaction-alert {
+  transition: background 0.3s ease, color 0.3s ease;
+}

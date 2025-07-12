@@ -1,5 +1,7 @@
+// File: InvitationPage.js
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./Styles.css";
 import { FaWhatsapp, FaTelegramPlane, FaFacebookF } from "react-icons/fa";
 
@@ -32,22 +34,21 @@ const InvitationPage = () => {
     <div className="invitation-wrapper">
       <div className="invitation-container">
         <button className="back-button" onClick={() => navigate(-1)}>←</button>
-        <h2 className="title">Invitation</h2>
-        <p className="subtitle">Invite friends to make money together</p>
+        <h2 className="title">🎉 Invitation</h2>
+        <p className="subtitle">Invite friends and earn rewards together!</p>
         <span className="info-tag">You can call</span>
 
         <div className="qr-card">
           {qrUrl && <img src={qrUrl} alt="QR Code" className="qr-image" />}
-          <p className="label">Invitation Code</p>
+          <p className="label">Your Code</p>
           <p className="code">{invitationCode}</p>
         </div>
 
-        <button className="copy-btn" onClick={handleCopy}>Copy</button>
+        <button className="copy-btn" onClick={handleCopy}>📋 Copy Code</button>
 
         <div className="share-buttons">
           <p className="share-title">Share your code</p>
 
-          {/* ✅ WhatsApp direct to admin (no message) */}
           <a
             href={`https://wa.me/7009661005`}
             target="_blank"
@@ -57,7 +58,6 @@ const InvitationPage = () => {
             <FaWhatsapp className="icon" /> WhatsApp
           </a>
 
-          {/* ✅ Telegram direct to admin */}
           <a
             href={`https://t.me/your_admin_username`}
             target="_blank"
@@ -67,7 +67,6 @@ const InvitationPage = () => {
             <FaTelegramPlane className="icon" /> Telegram
           </a>
 
-          {/* ✅ Facebook Messenger direct to admin */}
           <a
             href={`https://m.me/your.admin.username`}
             target="_blank"
@@ -78,10 +77,15 @@ const InvitationPage = () => {
           </a>
         </div>
 
-        <img
+        {/* 🎯 3D-like animated image */}
+        <motion.img
           src="https://thumbs.dreamstime.com/b/refer-friend-concept-cartoon-hands-holding-phone-button-referral-program-landing-page-template-ui-web-mobile-app-215446719.jpg"
-          alt="People Illustration"
+          alt="Refer Illustration"
           className="illustration"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 120, delay: 0.2 }}
+          whileHover={{ scale: 1.05 }}
         />
 
         <div id="copy-toast" className="copy-toast">✅ Code Copied!</div>

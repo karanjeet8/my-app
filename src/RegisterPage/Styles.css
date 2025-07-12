@@ -1,15 +1,19 @@
-/* File: Styles.css */
+/* Base Reset */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
 }
 
+/* Container */
 .register-container {
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
   transition: background 0.4s;
-  padding-left: 40px; /* 💡 Shift right */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .register-container.dark {
@@ -22,24 +26,26 @@ body {
   color: #000;
 }
 
+/* Toggle Button */
 .toggle-mode-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
   padding: 8px 14px;
   border-radius: 8px;
   background-color: #ffa726;
   color: white;
   border: none;
   cursor: pointer;
-  z-index: 100;
+  z-index: 999;
+  font-size: 14px;
 }
 
+/* Left Panel */
 .register-left {
   flex: 1;
-  padding: 40px 20px;
-  min-width: 300px;
-  transform: translateX(20px); /* 💡 Slightly right */
+  padding: 20px;
+  min-width: 280px;
 }
 
 .brand-image {
@@ -53,7 +59,7 @@ body {
   background: #fff;
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   color: #333;
   margin-top: 20px;
 }
@@ -71,32 +77,28 @@ body {
   color: white;
 }
 
-.purple {
-  background-color: #9c27b0;
-}
-.green {
-  background-color: #4caf50;
-}
-.pink {
-  background-color: #e91e63;
-}
+.purple { background-color: #9c27b0; }
+.green { background-color: #4caf50; }
+.pink { background-color: #e91e63; }
 
 .info-text {
   margin-top: 20px;
   font-style: italic;
+  font-size: 14px;
 }
 
+/* Right Panel */
 .register-right {
   flex: 1;
-  padding: 40px 20px;
-  min-width: 350px;
+  padding: 20px;
+  min-width: 320px;
 }
 
 .form-box {
   background: #ffffffcc;
   border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
 }
 
@@ -107,10 +109,12 @@ body {
   margin-top: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  font-size: 15px;
 }
 
 .gender-selection {
   margin-top: 12px;
+  font-size: 14px;
 }
 
 .register-btn {
@@ -123,6 +127,7 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .register-btn:hover {
@@ -134,17 +139,107 @@ body {
   font-size: 14px;
 }
 
-@media (max-width: 768px) {
+/* Login Link */
+.login-option {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.login-link {
+  color: #ff7e5f;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-link:hover {
+  color: #ff5f42;
+}
+
+/* Tablet & Below */
+@media (max-width: 1024px) {
   .register-container {
     flex-direction: column;
-    padding-left: 20px;
+    padding: 15px;
   }
 
-  .register-left, .register-right {
-    padding: 20px;
+  .register-left,
+  .register-right {
+    padding: 15px;
+    min-width: 100%;
   }
 
   .form-box {
     padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .toggle-mode-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .form-box input,
+  .form-box select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .register-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .gender-selection label,
+  .checkbox {
+    font-size: 13px;
+  }
+
+  .login-option {
+    font-size: 13px;
+  }
+
+  .stats-card {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
+/* iPhone SE (320px) */
+@media (max-width: 360px) {
+  .form-box {
+    padding: 15px;
+  }
+
+  .form-box input,
+  .form-box select {
+    padding: 7px;
+    font-size: 13px;
+  }
+
+  .register-btn {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  .toggle-mode-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .stats-card {
+    padding: 12px;
+  }
+
+  .info-text {
+    font-size: 13px;
+  }
+
+  .checkbox {
+    font-size: 12px;
   }
 }

@@ -102,7 +102,7 @@ const langCodes = {
 const sliderImages = [
   "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhboNerHbw6UBAARF2Nbv8cxxbbgHK8ZQCTZdChnA6uAic5xLZSXEGm8D66B4L8ARINYz_BLe88rwHiSiLAK7YNfFt0iUPuyKz43tLNPDwVphKa5VI8isx5yN0O6fJ2RY9e_D3ylPv4sGsZ/s1600/cr7-ad-insane+%25284%2529.jpg",
   "https://cedcommerce.com/blog/wp-content/uploads/2019/05/Amazon-Sponsored-products-tw-og2.jpg",
-  "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202302/untitled-11-sixteen_nine.jpg?size=1280:720",
+  "https://moneymoveshq.com/wp-content/uploads/2023/04/AdobeStock_106078504.jpeg",
   "https://evitamin.in/cdn/shop/articles/Blog_Creatives2_1_1_15c22938-a285-49ca-9276-2d547469d593.jpg?v=1736491368"
 ];
 

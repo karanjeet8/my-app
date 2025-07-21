@@ -1,5 +1,5 @@
 // File: OrdersPage.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Styles.css";
 import { FaEdit } from "react-icons/fa";
@@ -81,10 +81,25 @@ const OrdersPage = () => {
   };
 
   const handleSaveAndView = async () => {
-    await sendToGoogleSheet(); // ✅ Only this added
+    await sendToGoogleSheet();
     alert("✅ VIP data saved to Google Sheets!");
     navigate("/orders", { state: { updatedVipData: vipData } });
   };
+
+  // ✅ FETCH VIP data live from Google Sheets (only addition)
+  useEffect(() => {
+    const fetchVIPData = async () => {
+      try {
+        const response = await fetch(GOOGLE_SHEET_WEBHOOK_URL);
+        const data = await response.json();
+        setVipData(data);
+      } catch (error) {
+        console.error("❌ Failed to fetch VIP data:", error.message);
+      }
+    };
+
+    fetchVIPData();
+  }, []);
 
   return (
     <div className="orders-container">

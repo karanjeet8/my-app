@@ -1,7 +1,7 @@
 // File: HomePage.js
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { database, ref, onValue, push } from "../Firebase";
 import "./Styles.css";
 
 const HomePage = () => {
@@ -10,17 +10,29 @@ const HomePage = () => {
   const [selectedRating, setSelectedRating] = useState(0);
   const [showNameInput, setShowNameInput] = useState(false);
   const [userName, setUserName] = useState("");
-  const [finalName, setFinalName] = useState("");
+  const [audienceType, setAudienceType] = useState("");
+  const [ratings, setRatings] = useState([]);
 
-  // ✅ Updated to check if user is registered
+  // Load ratings from Firebase Realtime Database
+  useEffect(() => {
+    const ratingsRef = ref(database, "ratings");
+    onValue(ratingsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const ratingList = Object.values(data);
+        setRatings(ratingList);
+      }
+    });
+  }, []);
+
   const handleLaunch = () => {
     const email = localStorage.getItem("user-email");
     const password = localStorage.getItem("login-password");
 
     if (email && password) {
-      navigate("/login"); // Already registered
+      navigate("/login");
     } else {
-      navigate("/register"); // New user
+      navigate("/register");
     }
   };
 
@@ -38,8 +50,18 @@ const HomePage = () => {
   };
 
   const handleSubmitRating = () => {
-    if (userName.trim()) {
-      setFinalName(userName.trim());
+    if (userName.trim() && audienceType.trim()) {
+      const newRating = {
+        name: userName.trim(),
+        rating: selectedRating,
+        audience: audienceType.trim(),
+      };
+
+      const ratingsRef = ref(database, "ratings");
+      push(ratingsRef, newRating); // Save to Firebase
+
+      setUserName("");
+      setAudienceType("");
       setShowNameInput(false);
     }
   };
@@ -80,7 +102,7 @@ const HomePage = () => {
         <div className="footer-content">
           <p>&copy; 2025 TradeSmart. All rights reserved.</p>
 
-          {/* Interactive Rating */}
+          {/* Rating Section */}
           <div className="footer-rating">
             <p>Rate your experience:</p>
             {[1, 2, 3, 4, 5].map((index) => (
@@ -95,7 +117,6 @@ const HomePage = () => {
               </span>
             ))}
 
-            {/* Show input if rating was selected */}
             {showNameInput && (
               <div className="rating-name-input">
                 <input
@@ -104,23 +125,28 @@ const HomePage = () => {
                   value={userName}
                   onChange={(e) => setUserName(e.target.value)}
                 />
+                <input
+                  type="text"
+                  placeholder="Audience type (e.g., Trader, Investor)"
+                  value={audienceType}
+                  onChange={(e) => setAudienceType(e.target.value)}
+                />
                 <button onClick={handleSubmitRating}>Submit</button>
               </div>
             )}
-
-            {/* Show result if both rating and name submitted */}
-            {finalName && selectedRating > 0 && (
-              <p className="rating-result">
-                {finalName} rated {selectedRating} star{selectedRating > 1 ? "s" : ""}!
-              </p>
-            )}
           </div>
 
-          {/* Good User Comments */}
+          {/* Comments Section */}
           <div className="footer-comments">
             <p>“Best trading experience I’ve ever had!” - Aarav K.</p>
             <p>“Easy to use, visually stunning, and accurate.” - Priya D.</p>
             <p>“Love the real-time analytics and fast performance.” - John M.</p>
+
+            {ratings.map((item, index) => (
+              <p key={index}>
+                “{item.name} ({item.audience}) rated {item.rating} star{item.rating > 1 ? "s" : ""}.”
+              </p>
+            ))}
           </div>
         </div>
       </footer>

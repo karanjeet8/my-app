@@ -71,8 +71,8 @@ const LoginPage = () => {
           alt="wallet"
           className="wallet-image"
         />
-        <h2>Easy Wallet Control</h2>
-        <p>Create wallets and easily manage your cash flow.</p>
+        <h2></h2>
+        <p>Create wallet Global Expert ts and easily manage your cash flow.</p>
       </div>
 
       <div className="login-right">
